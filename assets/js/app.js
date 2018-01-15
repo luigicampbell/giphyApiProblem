@@ -1,5 +1,5 @@
 // Array for category
-var arr = ["paella","sangria","tapas","arroz negre"];
+var arr = ["paella","sangria","tapas","arroz"];
 // Create buttons
 function renderButtons(){
   // Prevents repeated buttons by deleting them everytime function callled
@@ -19,7 +19,7 @@ function renderButtons(){
 $('#add-button').on("click",function(event){
   // Prevents form from submitting itself-user is allowed to press enter
   event.preventDefault();
-  var button = $('#button-input').val().trim();
+  var button = $('#button-input2').val().trim();
   // Push into the array from the form
   arr.push(button);
   // Call renderButtons function
@@ -44,7 +44,7 @@ $('button').on("click", function() {
   .done(function(response) {
     // Storing an array of results in the results variable
     var results = response.data;
-
+    $("#gifs-appear-here").empty();
     // Looping over every result item
     for (var j = 0; j < results.length; j++) {
 
