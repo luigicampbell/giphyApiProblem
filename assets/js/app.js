@@ -6,7 +6,11 @@ function renderButtons(){
   $('#buttons-appear-here').empty();
   for (var i = 0; i <arr.length; i++){
     var buttons = $('<button>');
+    // If I have time to style buttons
+    buttons.addClass("buttons");
+    // Adds attribute to pass search onto ajax call
     buttons.attr("data-person",arr[i]);
+    // Adds text in form
     buttons.text(arr[i]);
     $('#buttons-appear-here').append(buttons);
     }
