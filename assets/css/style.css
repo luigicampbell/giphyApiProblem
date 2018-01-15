@@ -1,0 +1,9 @@
+*{
+  background-color: #fce4ec;
+  font-size: 30px;
+}
+.buttons,#add-button{
+  padding: 20px;
+  font-size: 30px;
+  background-color: #ff8a80;
+}
