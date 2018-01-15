@@ -9,21 +9,31 @@ function renderButtons(){
     // If I have time to style buttons
     buttons.addClass("buttons");
     // Adds attribute to pass search onto ajax call
-    buttons.attr("data-person",arr[i]);
+    buttons.attr("data-giphy",arr[i]);
     // Adds text in form
     buttons.text(arr[i]);
     $('#buttons-appear-here').append(buttons);
     }
 }
-// Add "data-person" class to divs
+// Function for adding the buttons based on search form
+$('#add-button').on("click",function(event){
+  // Prevents form from submitting itself-user is allowed to press enter
+  event.preventDefault();
+  var button = $('#button-input').val().trim();
+  // Push into the array from the form
+  arr.push(button);
+  // Call renderButtons function
+  renderButtons();
+});
+renderButtons();
 // Event listener for all button elements
-$("button").on("click", function() {
+$('button').on("click", function() {
 
-  var person = $(this).attr("data-person");
+  var giphy = $(this).attr("data-giphy");
 
   // Constructing a URL to search Giphy for the name of the person who said the quote
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-  person + "&api_key=dc6zaTOxFJmzC&limit=10";
+  giphy + "&api_key=dc6zaTOxFJmzC&limit=10";
 
   // Performing our AJAX GET request
   $.ajax({
