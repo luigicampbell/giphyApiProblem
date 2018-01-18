@@ -38,6 +38,8 @@ $(document).ready(function(){
         var results = response.data;
         $("#gifs-appear-here").empty();
         // Looping over every result item
+
+        console.log('RESULTS :: ', results[0])
         for (var j = 0; j < results.length; j++) {
 
           // Only taking action if the photo has an appropriate rating
@@ -58,8 +60,8 @@ $(document).ready(function(){
             // result item
             // Need to add multiple srcs to account for multiple states for last onclick
             giphyImage.attr("src",results[j].images.fixed_height.url);
-            giphyImage.attr("data-still",results[j].images.fixed_height.url + "/200_s.gif");
-            giphyImage.attr("data-animate",results[j].images.fixed_height.url + "/200.gif");
+            giphyImage.attr("data-still",results[j].images.fixed_height_still.url);
+            giphyImage.attr("data-animate",results[j].images.fixed_height.url);
             giphyImage.attr("data-state", "still");
             giphyImage.addClass("gif");
             // Appending the paragraph and personImage we created to the "gifDiv" div we created
