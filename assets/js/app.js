@@ -19,7 +19,8 @@ $(document).ready(function(){
 
 
     // Event listener for all button elements
-    $('button').on("click", function() {
+    $(document).on("click", ".buttons", function() {
+        $("#gifs-appear-here").empty();
 
       var giphy = $(this).attr("data-giphy");
 
@@ -36,7 +37,7 @@ $(document).ready(function(){
       .done(function(response) {
         // Storing an array of results in the results variable
         var results = response.data;
-        $("#gifs-appear-here").empty();
+
         // Looping over every result item
 
         console.log('RESULTS :: ', results[0])
@@ -62,7 +63,7 @@ $(document).ready(function(){
             giphyImage.attr("src",results[j].images.fixed_height.url);
             giphyImage.attr("data-still",results[j].images.fixed_height_still.url);
             giphyImage.attr("data-animate",results[j].images.fixed_height.url);
-            giphyImage.attr("data-state", "still");
+            giphyImage.attr("data-state", "animate");
             giphyImage.addClass("gif");
             // Appending the paragraph and personImage we created to the "gifDiv" div we created
             gifDiv.append(p);
@@ -70,22 +71,41 @@ $(document).ready(function(){
             // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
             $("#gifs-appear-here").prepend(gifDiv);
           }
+        }
           // Selecting Class of image this function sets data-state attribute to still or animate
           $(".gif").on("click", function() {
             // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+            var element = $(this)
+            console.log(element);
             var state = $(this).attr("data-state");
             // If the clicked image's state is still, update its src attribute to what its data-animate value is.
             // Then, set the image's data-state to animate
             // Else set src to the data-still value
+
+
+            // attribute gets reassigned on click
             if (state === "still") {
-              $(this).attr("src", $(this).attr("data-animate"));
+              console.log("state ",state);
+              console.log(element);
+
+              $(this).attr("src", $(this).attr("data-still"));
+
               $(this).attr("data-state", "animate");
-            } else {
+
+              console.log("first thing ", $(this).attr("src", $(this).attr("data-animate")));
+
+              // console.log("second thing ",$(this).attr("data-state", "animate"));
+
+
+            } else if(state ==='animate') {
               $(this).attr("src", $(this).attr("data-still"));
               $(this).attr("data-state", "still");
+              console.log("else statment");
+            }
+            else{
+              alert("why");
             }
           });
-        }
       });
     });
   }
@@ -103,3 +123,8 @@ $(document).ready(function(){
 
   renderButtons();
 });
+
+
+var first = function(arr){
+  does stuff
+}
