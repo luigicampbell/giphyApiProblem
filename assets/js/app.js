@@ -123,8 +123,3 @@ $(document).ready(function(){
 
   renderButtons();
 });
-
-
-var first = function(arr){
-  does stuff
-}
