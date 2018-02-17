@@ -1,6 +1,7 @@
 *{
   background-color: #fce4ec;
-  font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1em;
 }
 .buttons,#add-button{
   padding: 20px;
