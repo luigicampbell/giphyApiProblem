@@ -2,9 +2,35 @@
   background-color: #fce4ec;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1em;
+  text-shadow: 1px 1px 1px 1px #37474f;
 }
 .buttons,#add-button{
-  padding: 20px;
+  width: 45%;
+  padding: 30px;
   font-size: 30px;
   background-color: #ff8a80;
+  border-radius: 20px;
+  margin: 20px;
+}
+.buttons:focus,#add-button:focus{
+  outline: none;
+  background-color: #f50057;
+}
+img{
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #666;
+}
+#button-input{
+  width: 100%;
+  background-color: white;
+
+
+}
+#button-form{
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: text-shadow: 1px 1px 1px 1px #37474f;
 }

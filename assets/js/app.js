@@ -103,7 +103,7 @@ $(document).ready(function(){
               console.log("else statment");
             }
             else{
-              alert("why");
+              alert("an error occurred...");
             }
           });
       });
