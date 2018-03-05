@@ -26,7 +26,7 @@ $(document).ready(function(){
 
       // Constructing a URL to search Giphy for the name of the person who said the quote
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      giphy + "&api_key=dc6zaTOxFJmzC&limit=10";
+      giphy + "&api_key=dc6zaTOxFJmzC&limit=7";
 
       // Performing our AJAX GET request
       $.ajax({
@@ -111,7 +111,9 @@ $(document).ready(function(){
   }
   // Function for adding the buttons based on search form
   $('#add-button').on("click",function(event){
+
     // Prevents form from submitting itself-user is allowed to press enter
+    // Winnie, IDK why it won't work without this-the submit button won't respond :/
     event.preventDefault();
     var button = $('#button-input').val().trim();
     // Push into the array from the form
